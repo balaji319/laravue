@@ -66,7 +66,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        
         $obj_edit_data = User::find($id);
         return view('edit',compact('obj_edit_data'));
     }
@@ -83,6 +83,11 @@ class HomeController extends Controller
          $this->validate($request, [
                 'name' => 'required|max:10',
             ]);
+/*         $uid=Auth::user()->id;
+         $file=$request->file('image');
+         $filename=$file->getClientOriginalName();
+         $path="images";*/
+        $file->move($path,$filename);
         $obj_edit_data = User::find($id);
         $obj_edit_data->name = $request->name;
         $obj_edit_data->email = $request->email;

@@ -65,8 +65,7 @@ class RegisterController extends Controller
     {
 
 
-        $user_img= asset('images/user.png');
-
+      $user_img= asset('images/user.png');
       $data= User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -76,7 +75,6 @@ class RegisterController extends Controller
         ]);
         $obj_result=user::find($data->id);
           $this->sendmail($obj_result);
-
           return  $data;
     }
 

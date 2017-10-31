@@ -8,7 +8,7 @@
                 <div class="panel-heading">Edit User</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('home/'.$obj_edit_data->id) }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('home/'.$obj_edit_data->id) }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                           {{ method_field('PUT') }}  
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
